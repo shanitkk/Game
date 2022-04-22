@@ -3,7 +3,6 @@ import java.awt.*;
 
 public class Player {
 
-
     public static final int MARGIN_BOTTOM = 100;
     public static final int MARGIN_LEG = 15;
     public static final int WEIGHT_LEG = 15;
