@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
-
 public class GameScene extends JPanel {
     public static final int PLAYER_SPEED = 0;
     public static final int FALLING_ORANGES_SPEED = 10;

@@ -3,7 +3,6 @@ public class Score {
 
     public static final int WIN = 10;
     public static final int MIN_POINTS = 0;
-
     private int points;
 
     public Score() {

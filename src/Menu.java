@@ -12,6 +12,7 @@ public class Menu extends JPanel {
     private JButton startGame;
     private JLabel description;
 
+
     public Menu(int x, int y, int width, int height) {
         this.setBounds(x, y, width, height);
         this.setLayout(null);
@@ -20,7 +21,7 @@ public class Menu extends JPanel {
                 (Window.WINDOW_HEIGHT / 2) - (BUTTON_HEIGHT / 2),
                 BUTTON_WIDTH,
                 BUTTON_HEIGHT);
-        this.description = addLabel("30 ניצחון", this.startGame.getX(),
+        this.description = addLabel("10 ניצחון", this.startGame.getX(),
                 this.startGame.getY() + this.startGame.getHeight(), 250, 250);
         this.setDoubleBuffered(true);
         this.background = new ImageIcon("oranges.jpg");

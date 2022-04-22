@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+
 public class ScoreBoard extends JPanel {
     Font font = new Font("Assistant", Font.BOLD, 20);
     public static final int SCORE_TITLE_WIDTH = 80, SCORE_TITLE_HEIGHT = 80;
