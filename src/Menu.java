@@ -55,7 +55,6 @@ public class Menu extends JPanel {
             this.add(gameScene);
             this.startGame.setVisible(false);
             this.description.setVisible(false);
-
         });
     }
 

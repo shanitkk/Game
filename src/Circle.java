@@ -10,4 +10,5 @@ public class Circle  extends Shape{
         super.paint(graphics);
         graphics.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
+
 }
