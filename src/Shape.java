@@ -7,6 +7,7 @@ public abstract class Shape {
     private int height;
     private Color color;
 
+
     public Shape(int x, int y, int width, int height, Color color) {
         this.x = x;
         this.y = y;

@@ -1,7 +1,6 @@
 import java.awt.*;
 
 public class Orange {
-
     public static final int ORANGE_WEIGHT = 45;
     public static final int ORANGE_HEIGHT = 45;
     public static final int LEAF_MARGIN = 3;

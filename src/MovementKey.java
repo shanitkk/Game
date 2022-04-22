@@ -2,7 +2,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class MovementKey implements KeyListener {
-
     private Player player;
 
     public MovementKey(Player player) {

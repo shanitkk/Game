@@ -12,6 +12,7 @@ public class Menu extends JPanel {
     private JButton startGame;
     private JLabel description;
 
+
     public Menu(int x, int y, int width, int height) {
         this.setBounds(x, y, width, height);
         this.setLayout(null);

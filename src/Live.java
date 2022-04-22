@@ -5,7 +5,6 @@ public class Live {
 
     private ImageIcon live;
 
-
     public Live() {
         this.live = new ImageIcon("heart.png");
     }
