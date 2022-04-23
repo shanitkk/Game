@@ -89,7 +89,7 @@ public class GameScene extends JPanel {
     }
 
     public void limit() {
-        while ((this.tapozitPlayer.getRightHand().getX() + this.tapozitPlayer.getRightHand().getWidth()) == Window.WINDOW_WIDTH)
+        while (this.tapozitPlayer.getRightHand().getX() + (2 * this.tapozitPlayer.getRightHand().getWidth()) == Window.WINDOW_WIDTH)
             this.tapozitPlayer.moveLeft();
         while (this.tapozitPlayer.getLeftHand().getX() - (Player.WEIGHT_BASKET / 2) == 0)
             this.tapozitPlayer.moveRight();
