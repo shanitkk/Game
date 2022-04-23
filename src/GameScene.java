@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GameScene extends JPanel {
     public static final int PLAYER_SPEED = 0;
-    public static final int FALLING_ORANGES_SPEED = 10;
+    public static final int FALLING_ORANGES_SPEED = 2;
     public static final int SCORE_BOARD_Y = 0, SCORE_BOARD_WIDTH = 150, SCORE_BOARD_HEIGHT = 150;
     public static final int LABEL_SCORE_Y = 27, LABEL_SCORE_WIDTH = 80, LABEL_SCORE_HEIGHT = 80;
     Font font = new Font("Assistant", Font.BOLD, 20);
@@ -89,7 +89,7 @@ public class GameScene extends JPanel {
     }
 
     public void limit() {
-        while (this.tapozitPlayer.getRightHand().getX() + this.tapozitPlayer.getRightHand().getWidth() == Window.WINDOW_WIDTH)
+        while ((this.tapozitPlayer.getRightHand().getX() + this.tapozitPlayer.getRightHand().getWidth()) == Window.WINDOW_WIDTH)
             this.tapozitPlayer.moveLeft();
         while (this.tapozitPlayer.getLeftHand().getX() - (Player.WEIGHT_BASKET / 2) == 0)
             this.tapozitPlayer.moveRight();
@@ -115,10 +115,10 @@ public class GameScene extends JPanel {
     }
 
     public int randomRange() {
-        int range = 0;
+        int range;
         do {
             range = random.nextInt(Window.WINDOW_WIDTH);
-        } while (range >= (Window.WINDOW_WIDTH - ScoreBoard.SCORE_TITLE_WIDTH));
+        } while (range >= (Window.WINDOW_WIDTH - SCORE_BOARD_WIDTH));
         return range;
     }
 

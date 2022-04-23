@@ -11,7 +11,7 @@ public class OrangeTree {
     public static final int ORENGE2_Y = 30;
     public static final int ORENGE3_X = 50;
     public static final int ORENGE3_Y = 75;
-    public static final int TREE_MARGIN = 50;
+    public static final int TREE_MARGIN = 30;
 
 
     private Rect trunk;
