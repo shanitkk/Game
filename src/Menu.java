@@ -5,7 +5,7 @@ public class Menu extends JPanel {
 
     Font font = new Font("Assistant", Font.BOLD, 20);
 
-    public static final int BUTTON_WIDTH = 150;
+    public static final int BUTTON_WIDTH = 250;
     public static final int BUTTON_HEIGHT = 100;
 
     private ImageIcon background;
@@ -21,8 +21,10 @@ public class Menu extends JPanel {
                 (Window.WINDOW_HEIGHT / 2) - (BUTTON_HEIGHT / 2),
                 BUTTON_WIDTH,
                 BUTTON_HEIGHT);
-        this.description = addLabel("10 ניצחון!!!!!", this.startGame.getX(),
-                this.startGame.getY() + this.startGame.getHeight(), 250, 250);
+        String text =  "יש לתפוס את התפוזים הנופלים, על מנת לנצח יש לתפוס 10 תפוזים" +
+                "\r בכל פעם שהתפוז יפול על הרצפה זה ייחשב כפסילה. בסיום 3 ההזמנויות המשחק יגמר.";
+        this.description = addLabel(text, this.startGame.getX(),
+                this.startGame.getY() + this.startGame.getHeight(), 600, 250);;
         this.setDoubleBuffered(true);
         this.background = new ImageIcon("oranges.jpg");
         newGame();

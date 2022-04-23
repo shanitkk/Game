@@ -1,11 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+
 public class GameScene extends JPanel {
     public static final int PLAYER_SPEED = 0;
     public static final int FALLING_ORANGES_SPEED = 10;
     public static final int SCORE_BOARD_Y = 0, SCORE_BOARD_WIDTH = 150, SCORE_BOARD_HEIGHT = 150;
-    public static final int LABEL_SCORE_Y =27, LABEL_SCORE_WIDTH = 80, LABEL_SCORE_HEIGHT = 80;
+    public static final int LABEL_SCORE_Y = 27, LABEL_SCORE_WIDTH = 80, LABEL_SCORE_HEIGHT = 80;
     Font font = new Font("Assistant", Font.BOLD, 20);
     Random random = new Random();
 
@@ -16,7 +17,7 @@ public class GameScene extends JPanel {
     public GameScene(int x, int y, int width, int height) {
         this.setBounds(x, y, width, height);
         this.tapozitPlayer = new Player();
-        this.orange = new Orange(random.nextInt(Window.WINDOW_WIDTH - SCORE_BOARD_WIDTH), 0);
+        this.orange = new Orange(randomRange(), 0);
         this.orangeTree = new OrangeTree(width - OrangeTree.TOP_WIDTH - OrangeTree.TREE_MARGIN,
                 height - OrangeTree.TOP_HEIGHT - OrangeTree.TRUNK_HEIGHT - OrangeTree.TREE_MARGIN);
         this.mainGameScene();
@@ -52,7 +53,6 @@ public class GameScene extends JPanel {
                     newOrange();
                     String text = labelScore.getText();
                     int points = Integer.parseInt(text);
-
                     points++;
                     labelScore.setText(String.valueOf(points));
                     System.out.println(labelScore.getText());
@@ -96,7 +96,7 @@ public class GameScene extends JPanel {
     }
 
     public void newOrange() {
-        this.orange.setLocation(random.nextInt(Window.WINDOW_WIDTH), 0);
+        this.orange.setLocation(randomRange(), 0);
     }
 
     public void paintComponent(Graphics graphics) {
@@ -109,10 +109,19 @@ public class GameScene extends JPanel {
 
     public void labelScore(JLabel labelScore) {
         labelScore.setFont(font);
-        labelScore.setBounds(Window.WINDOW_WIDTH - ScoreBoard.SCORE_TITLE_WIDTH,LABEL_SCORE_Y , LABEL_SCORE_WIDTH , LABEL_SCORE_HEIGHT );
+        labelScore.setBounds(Window.WINDOW_WIDTH - ScoreBoard.SCORE_TITLE_WIDTH, LABEL_SCORE_Y, LABEL_SCORE_WIDTH, LABEL_SCORE_HEIGHT);
         labelScore.setBackground(Color.black);
         this.add(labelScore);
     }
+
+    public int randomRange() {
+        int range = 0;
+        do {
+            range = random.nextInt(Window.WINDOW_WIDTH);
+        } while (range >= (Window.WINDOW_WIDTH - ScoreBoard.SCORE_TITLE_WIDTH));
+        return range;
+    }
+
 //    public void exitButton() {
 //        JButton exitButton = new JButton("Exit");
 //        this.add(exitButton);
