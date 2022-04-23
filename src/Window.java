@@ -12,18 +12,13 @@ public class Window extends JFrame {
         this.setResizable(false);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
-        this.setTitle("Ta..... by adar & shanit");
+        this.setTitle("Tapozit collecting oranges by adar & shanit");
         Menu menu = new Menu(0,0,WINDOW_WIDTH, WINDOW_HEIGHT);
         this.add(menu);
         this.setVisible(true);
     }
 
-
     public static void main(String[] args) {
         Window main = new Window();
     }
-
-
-
-
 }

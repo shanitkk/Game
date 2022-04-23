@@ -5,13 +5,12 @@ public class Menu extends JPanel {
 
     Font font = new Font("Assistant", Font.BOLD, 20);
 
-    public static final int BUTTON_WIDTH = 250;
-    public static final int BUTTON_HEIGHT = 100;
+    public static final int BUTTON_WIDTH = 250, BUTTON_HEIGHT = 100;
+    public static final int RULES_X = 300, RULES_Y = 100, RULES_WIDTH = 800, RULES_HEIGHT = 300;
 
     private ImageIcon background;
+    private ImageIcon rules;
     private JButton startGame;
-    private JLabel description;
-
 
     public Menu(int x, int y, int width, int height) {
         this.setBounds(x, y, width, height);
@@ -21,12 +20,9 @@ public class Menu extends JPanel {
                 (Window.WINDOW_HEIGHT / 2) - (BUTTON_HEIGHT / 2),
                 BUTTON_WIDTH,
                 BUTTON_HEIGHT);
-        String text =  "יש לתפוס את התפוזים הנופלים, על מנת לנצח יש לתפוס 10 תפוזים" +
-                "\r בכל פעם שהתפוז יפול על הרצפה זה ייחשב כפסילה. בסיום 3 ההזמנויות המשחק יגמר.";
-        this.description = addLabel(text, this.startGame.getX(),
-                this.startGame.getY() + this.startGame.getHeight(), 600, 250);;
         this.setDoubleBuffered(true);
         this.background = new ImageIcon("oranges.jpg");
+        this.rules = new ImageIcon("rules.png");
         newGame();
         this.setVisible(true);
     }
@@ -40,16 +36,10 @@ public class Menu extends JPanel {
         return addButton;
     }
 
-    private JLabel addLabel(String text, int x, int y, int width, int height) {
-        JLabel addLabel = new JLabel(text);
-        addLabel.setFont(font);
-        addLabel.setBounds(x, y, width, height);
-        this.add(addLabel);
-        return addLabel;
-    }
-
     public void paintComponent(Graphics graphics) {
         graphics.drawImage(this.background.getImage(), 0, 0, Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT, null);
+        graphics.drawImage(this.rules.getImage(), RULES_X, RULES_Y, RULES_WIDTH, RULES_HEIGHT, null);
+
     }
 
     private void newGame() {
@@ -57,7 +47,6 @@ public class Menu extends JPanel {
             GameScene gameScene = new GameScene(0, 0, Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT);
             this.add(gameScene);
             this.startGame.setVisible(false);
-            this.description.setVisible(false);
         });
     }
 
